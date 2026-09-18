@@ -67,7 +67,7 @@ h2 { font-size:clamp(46px,5.2vw,75px); letter-spacing:-.045em; line-height:.9; }
 .care-copy .eyebrow { margin-bottom:25px; }
 .care-copy p:not(.eyebrow) { color:#5F5954; font-size:16px; line-height:1.8; margin:35px 0 28px; }
 .underlined-link { align-items:center; border-bottom:1px solid var(--oxblood); color:var(--oxblood); display:inline-flex; font-size:12px; font-weight:700; gap:8px; padding-bottom:7px; }
-.services { overflow:hidden; padding-bottom:125px; padding-top:105px; position:relative; } .services:after { background:url('/manus-storage/tlholoes-symbol_3ea96e0d.png') center/430px no-repeat; content:""; inset:160px -80px auto auto; height:430px; opacity:.035; pointer-events:none; position:absolute; width:430px; } .services > * { position:relative; z-index:1; }
+.services { overflow:hidden; padding-bottom:125px; padding-top:105px; position:relative; } .services:after { background:url('/branding/tlholoe-web-icon.png') center/430px no-repeat; content:""; inset:160px -80px auto auto; height:430px; opacity:.035; pointer-events:none; position:absolute; width:430px; } .services > * { position:relative; z-index:1; }
 .services-heading { align-items:end; display:flex; gap:10%; justify-content:space-between; margin-bottom:69px; }
 .services-heading p { color:#5F5954; font-size:15px; line-height:1.7; margin:0 5% 5px 0; max-width:340px; }
 .service-list { border-top:1px solid var(--border); }

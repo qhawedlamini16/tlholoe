@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Tlholoe Funeral Parlour emblem</title>
+  <desc id="desc">A burgundy cross surrounded by a laurel wreath with a simple ribbon plaque.</desc>
+  <defs>
+    <style>
+      .burgundy { fill: #8d1730; }
+      .ivory { fill: #fbf5e8; }
+      .stroke { fill: none; stroke: #8d1730; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <circle cx="256" cy="256" r="235" class="ivory"/>
+  <circle cx="256" cy="256" r="235" class="stroke" stroke-width="12"/>
+  <!-- laurel branches -->
+  <g class="stroke" stroke-width="10">
+    <path d="M139 391 C88 345 75 278 103 202 C121 154 151 119 190 91"/>
+    <path d="M373 391 C424 345 437 278 409 202 C391 154 361 119 322 91"/>
+  </g>
+  <g class="burgundy">
+    <!-- left leaves -->
+    <path d="M111 327 C83 315 76 291 79 269 C103 272 121 287 126 309Z"/>
+    <path d="M101 267 C77 247 78 223 86 203 C108 212 120 231 117 252Z"/>
+    <path d="M112 207 C96 183 103 161 116 145 C134 159 140 180 131 198Z"/>
+    <path d="M137 155 C128 129 140 110 158 98 C169 117 167 139 152 154Z"/>
+    <path d="M168 118 C165 94 181 78 201 72 C205 95 194 112 177 123Z"/>
+    <!-- right leaves -->
+    <path d="M401 327 C429 315 436 291 433 269 C409 272 391 287 386 309Z"/>
+    <path d="M411 267 C435 247 434 223 426 203 C404 212 392 231 395 252Z"/>
+    <path d="M400 207 C416 183 409 161 396 145 C378 159 372 180 381 198Z"/>
+    <path d="M375 155 C384 129 372 110 354 98 C343 117 345 139 360 154Z"/>
+    <path d="M344 118 C347 94 331 78 311 72 C307 95 318 112 335 123Z"/>
+  </g>
+  <!-- central cross, retaining the original stepped silhouette -->
+  <path class="ivory" d="M226 93 H286 V151 H344 V211 H286 V344 H226 V211 H168 V151 H226Z"/>
+  <path class="stroke" stroke-width="12" d="M226 93 H286 V151 H344 V211 H286 V344 H226 V211 H168 V151 H226Z"/>
+  <!-- simplified ribbon plaque -->
+  <path class="ivory" d="M151 354 H361 V391 H151Z"/>
+  <path class="stroke" stroke-width="10" d="M151 354 H361 V391 H151Z"/>
+  <path class="ivory" d="M123 389 H389 V430 H123Z"/>
+  <path class="stroke" stroke-width="10" d="M123 389 H389 V430 H123Z"/>
+</svg>

@@ -13,7 +13,7 @@ import {
 import { type FormEvent, useEffect, useState } from "react";
 
 const suppliedLogo = "/manus-storage/tlholoes-supplied-logo_b5cc9ddd.jpg";
-const symbolLogo = "/manus-storage/tlholoes-symbol_3ea96e0d.png";
+const symbolLogo = "/branding/tlholoe-web-icon.png";
 const heroSlides = [
   { src: "/manus-storage/tlholoes-vehicles_e01bdcf0.jpg", alt: "Tlholoes funeral vehicles outside in Kagiso", caption: "Service presence" },
   { src: "/manus-storage/tlholoes-building-vehicles_eb26eb34.jpg", alt: "Tlholoes vehicles outside a funeral parlour building", caption: "A place to begin" },
