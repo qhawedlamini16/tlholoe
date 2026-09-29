@@ -12,16 +12,16 @@ import {
 } from "lucide-react";
 import { type FormEvent, useEffect, useState } from "react";
 
-const suppliedLogo = "/manus-storage/tlholoes-supplied-logo_b5cc9ddd.jpg";
 const symbolLogo = "/branding/tlholoe-web-icon.png";
 const heroSlides = [
-  { src: "/manus-storage/tlholoes-vehicles_e01bdcf0.jpg", alt: "Tlholoes funeral vehicles outside in Kagiso", caption: "Service presence" },
-  { src: "/manus-storage/tlholoes-building-vehicles_eb26eb34.jpg", alt: "Tlholoes vehicles outside a funeral parlour building", caption: "A place to begin" },
-  { src: "/manus-storage/tlholoes-ceremony_9d850a34.jpg", alt: "A dignified funeral ceremony under a black and white tent", caption: "A dignified farewell" },
+  { src: "/images/lions/lions-000.jpg", alt: "A funeral service beneath a black and white canopy", caption: "A dignified farewell" },
+  { src: "/images/lions/lions-001.jpg", alt: "Ceremonial guards standing beside a coffin", caption: "Care in every detail" },
+  { src: "/images/lions/lions-002.jpg", alt: "A decorated funeral setting with a coffin and flowers", caption: "A considered farewell" },
+  { src: "/images/lions/lions-003.jpg", alt: "Tlholoes Funeral Parlour vehicles outside the parlour", caption: "Here when you need us" },
 ];
-const careImage = "/manus-storage/tlholoes-care_999a2660.jpg";
-const detailImage = "/manus-storage/tlholoes-detail_62226ca0.jpg";
-const pamphletCallImage = "/manus-storage/tlholoes-pamphlet-call_389e8b72.jpg";
+const careImage = "/images/tlholoes-human-approach.jpg";
+const detailImage = "/images/tlholoes-find-us.jpg";
+const pamphletCallImage = "/images/tlholoes-enquiry.jpg";
 
 const hours = [
   ["Monday – Friday", "08:00 – 16:00"],
@@ -124,7 +124,7 @@ export default function Home() {
         </section>
 
         <section className="care-feature section-pad">
-          <div className="care-image-wrap"><img src={careImage} alt="Hands resting together over a linen cloth" /></div>
+          <div className="care-image-wrap"><img src={careImage} alt="Four Tlholoes Funeral Parlour gentlemen wearing suits and red ties" /></div>
           <div className="care-copy">
             <p className="eyebrow"><span className="eyebrow-line" /> A human service</p>
             <h2>One clear call.<br /><i>Then the next step.</i></h2>
@@ -155,7 +155,7 @@ export default function Home() {
         </section>
 
         <section className="hours-section section-pad" id="hours">
-          <div className="hours-photo"><img src={detailImage} alt="Ivory stationery and an oxblood flower on a walnut table" /></div>
+          <div className="hours-photo"><img src={detailImage} alt="A pastor beside a casket at a funeral ceremony" /></div>
           <div className="hours-card">
             <div className="section-index">05 <span>Find us</span></div>
             <h2>Open for your<br /><i>next question.</i></h2>
@@ -199,7 +199,7 @@ export default function Home() {
             </div>
           </div>
           <div className="final-cta-image">
-            <img src={pamphletCallImage} alt="Young adult holding a Tlholoes funeral packages pamphlet while speaking on a phone" />
+            <img src={pamphletCallImage} alt="A woman holding a Tlholoes Funeral Parlour pamphlet while making an enquiry call" />
           </div>
         </section>
       </main>
