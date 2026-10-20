@@ -6,11 +6,18 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import ServicePage from "./pages/ServicePage";
+import { services } from "./services";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      {services.map((service) => (
+        <Route key={service.slug} path={`/${service.slug}`}>
+          <ServicePage service={service} />
+        </Route>
+      ))}
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { type FormEvent, useEffect, useState } from "react";
+import { services } from "../services";
 
 const symbolLogo = "/branding/tlholoe-web-icon.png";
 const heroSlides = [
@@ -137,11 +138,12 @@ export default function Home() {
           <div className="section-index">03 <span>How we can help</span></div>
           <div className="services-heading"><h2>A considered farewell,<br /><i>step by step.</i></h2><p>For current availability and arrangements, please speak directly with the parlour. Our team can guide you through the details with care.</p></div>
           <div className="service-list">
-            <div className="service-item"><span>01</span><img className="service-mark" src={symbolLogo} alt="" /><div><h3>Funeral arrangements</h3><p>Calm guidance for the decisions and details that come next.</p></div><ArrowUpRight size={19} /></div>
-            <div className="service-item"><span>02</span><img className="service-mark" src={symbolLogo} alt="" /><div><h3>Cremation services</h3><p>Support in arranging a dignified cremation according to your family’s wishes.</p></div><ArrowUpRight size={19} /></div>
-            <div className="service-item"><span>03</span><img className="service-mark" src={symbolLogo} alt="" /><div><h3>Repatriation</h3><p>Practical help coordinating the safe return of a loved one.</p></div><ArrowUpRight size={19} /></div>
-            <div className="service-item"><span>04</span><img className="service-mark" src={symbolLogo} alt="" /><div><h3>Tombstones</h3><p>Thoughtful memorial options to mark a life and a place of remembrance.</p></div><ArrowUpRight size={19} /></div>
-            <div className="service-item"><span>05</span><img className="service-mark" src={symbolLogo} alt="" /><div><h3>Exhumations</h3><p>Respectful support through the arrangements and practical steps involved.</p></div><ArrowUpRight size={19} /></div>
+            {services.map((item, index) => (
+              <a className="service-item" href={`/${item.slug}`} key={item.slug}>
+                <span>0{index + 1}</span><img className="service-mark" src={symbolLogo} alt="" />
+                <div><h3>{item.name}</h3><p>{item.short}</p></div><ArrowUpRight size={19} />
+              </a>
+            ))}
           </div>
         </section>
 
