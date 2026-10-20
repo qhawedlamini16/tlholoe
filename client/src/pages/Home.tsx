@@ -17,17 +17,24 @@ const heroSlides = [
   { src: "/images/lions/lions-000.jpg", alt: "A funeral service beneath a black and white canopy", caption: "A dignified farewell" },
   { src: "/images/lions/lions-001.jpg", alt: "Ceremonial guards standing beside a coffin", caption: "Care in every detail" },
   { src: "/images/lions/lions-002.jpg", alt: "A decorated funeral setting with a coffin and flowers", caption: "A considered farewell" },
-  { src: "/images/lions/lions-003.jpg", alt: "Tlholoes Funeral Parlour vehicles outside the parlour", caption: "Here when you need us" },
+  { src: "/images/lions/lions-003.jpg", alt: "Tlholoe's Funeral Parlour vehicles outside the parlour", caption: "Here when you need us" },
 ];
 const careImage = "/images/tlholoes-human-approach.jpg";
 const detailImage = "/images/tlholoes-find-us.jpg";
 const pamphletCallImage = "/images/tlholoes-enquiry.jpg";
 
 const hours = [
-  ["Monday – Friday", "08:00 – 16:00"],
-  ["Saturday", "08:00 – 12:00"],
+  ["Monday – Sunday", "09:00 – 17:00"],
   ["Emergency support", "24 hours · 7 days"],
 ];
+
+// Official business details. Keep identical to the Google Business Profile and
+// the LocalBusiness data in client/index.html.
+const businessName = "Tlholoe's Funeral Parlour";
+const legalName = "Tlholoe's Funeral Parlour CC";
+const streetShort = "8696 Otlega Dr, Kagiso";
+const fullAddress = "8696 Otlega Dr, Kagiso, Krugersdorp, 1754, South Africa";
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${businessName}, ${fullAddress}`)}`;
 
 const packageDetails = [
   { name: "Bronze", price: "R180", coffin: "Flat lid coffin", note: "A grounded essential package" },
@@ -53,7 +60,7 @@ export default function Home() {
   const submitFeedback = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = `Tlholoes website feedback from ${form.get("name") || "a visitor"}`;
+    const subject = `Tlholoe's website feedback from ${form.get("name") || "a visitor"}`;
     const body = `Name: ${form.get("name") || "Not provided"}\nContact: ${form.get("contact") || "Not provided"}\n\nFeedback:\n${form.get("message") || ""}\n\nPermission to share feedback publicly: ${form.get("permission") ? "Yes" : "No"}`;
     window.location.href = `mailto:admin@tlholoesfunerals.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setFeedbackSent(true);
@@ -63,9 +70,9 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="topbar">
-        <a className="brand" href="#top" onClick={closeMenu} aria-label="Tlholoes Funeral Parlour home">
+        <a className="brand" href="#top" onClick={closeMenu} aria-label="Tlholoe's Funeral Parlour home">
           <img className="brand-mark" src={symbolLogo} alt="" />
-          <span className="brand-name">Tlholoes <em>Funeral Parlour</em></span>
+          <span className="brand-name">Tlholoe's <em>Funeral Parlour</em></span>
         </a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -83,7 +90,7 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-line" /> Kagiso 2 · South Africa · 68th Anniversary</p>
+            <p className="eyebrow"><span className="eyebrow-line" /> Kagiso 2 · South Africa · 69th Anniversary</p>
             <h1>When a family needs <i>steady hands.</i></h1>
             <p className="hero-intro">A dignified local funeral parlour offering calm guidance and a clear place to begin when someone you love has passed.</p>
             <div className="hero-actions">
@@ -92,7 +99,7 @@ export default function Home() {
             </div>
             <div className="hero-note"><ShieldCheck size={18} /><span>Here when you need us, with dignity at the centre.</span></div>
           </div>
-          <div className="hero-art" aria-roledescription="carousel" aria-label="Tlholoes Funeral Parlour images">
+          <div className="hero-art" aria-roledescription="carousel" aria-label="Tlholoe's Funeral Parlour images">
             <div className="hero-slideshow" aria-live="polite">
               {heroSlides.map((slide, index) => <img key={slide.src} className={index === slideIndex ? "hero-slide active" : "hero-slide"} src={slide.src} alt={slide.alt} aria-hidden={index !== slideIndex} />)}
             </div>
@@ -102,29 +109,29 @@ export default function Home() {
         </section>
 
         <section className="contact-ribbon" aria-label="Contact details">
-          <div><span className="ribbon-label">Visit</span><a href="https://www.google.com/maps/search/?api=1&query=8696+Otlega+Drive+Kagiso+2+South+Africa" target="_blank" rel="noreferrer"><MapPin size={17} /> 8696 Otlega Drive, Kagiso 2</a></div>
+          <div><span className="ribbon-label">Visit</span><a href={mapsUrl} target="_blank" rel="noreferrer"><MapPin size={17} /> {streetShort}, Krugersdorp</a></div>
           <div><span className="ribbon-label">Call</span><a href="tel:+27114101081"><Phone size={17} /> 011 410 1081</a></div>
           <div><span className="ribbon-label">Write</span><a href="mailto:admin@tlholoesfunerals.co.za"><Mail size={17} /> admin@tlholoesfunerals.co.za</a></div>
         </section>
 
         <section className="statement section-pad about-section" id="care">
-          <div className="section-index">02 <span>About Tlholoes</span></div>
+          <div className="section-index">02 <span>About Tlholoe's</span></div>
           <div className="statement-grid">
             <div>
               <h2>Rooted in Kagiso.<br /><i>Here across generations.</i></h2>
             </div>
             <div className="statement-body">
-              <p>Tlholoes Funeral Parlour is at the heart of central Kagiso, serving families across Krugersdorp and nationwide. Founded in 1957, the parlour has supported several generations with excellent service and genuine customer care.</p>
+              <p>Tlholoe's Funeral Parlour is at the heart of central Kagiso, serving families across Krugersdorp and nationwide. Founded in 1957, the parlour has supported several generations with excellent service and genuine customer care.</p>
               <p>That care continues beyond funeral arrangements through after-care conversations and feedback that help the team keep improving how it serves each family.</p>
               <p className="signature">Serving families with dignity since 1957</p>
             </div>
           </div>
-          <div className="anniversary-banner" role="note"><span>68</span><strong>68 years of service</strong><small>Established 1957 · celebrating the families and community we serve</small></div>
+          <div className="anniversary-banner" role="note"><span>69</span><strong>69 years of service</strong><small>Established 1957 · celebrating the families and community we serve</small></div>
           <div className="credentials-strip" aria-label="Business details"><div><span>Established</span><strong>1957</strong></div><div><span>CK number</span><strong>1994/179520/23</strong></div><div><span>VAT number</span><strong>4790144390</strong></div></div>
         </section>
 
         <section className="care-feature section-pad">
-          <div className="care-image-wrap"><img src={careImage} alt="Four Tlholoes Funeral Parlour gentlemen wearing suits and red ties" /></div>
+          <div className="care-image-wrap"><img src={careImage} alt="Four Tlholoe's Funeral Parlour gentlemen wearing suits and red ties" /></div>
           <div className="care-copy">
             <p className="eyebrow"><span className="eyebrow-line" /> A human service</p>
             <h2>One clear call.<br /><i>Then the next step.</i></h2>
@@ -148,10 +155,10 @@ export default function Home() {
         <section className="packages section-pad" id="packages">
           <div className="section-index">04 <span>Funeral schemes</span></div>
           <div className="packages-heading"><h2>Clear packages.<br /><i>Room to choose.</i></h2><p>Affordable monthly rates tailored to meet your needs. Speak with the parlour to confirm eligibility, current pricing, and arrangements.</p></div>
-          <div className="package-grid">{packageDetails.map((item) => <article className="package-card" key={item.name}><div className="package-card-top"><span>{item.name}</span><strong>{item.price}</strong></div><h3>{item.coffin}</h3><p>{item.note}</p><div className="package-rule" /><small>{packageInclusions}</small><div className="package-card-actions"><a href={`https://wa.me/27832796962?text=${encodeURIComponent(`Hello Tlholoes Funeral Parlour, I would like to ask about the ${item.name} package.`)}`} target="_blank" rel="noreferrer"><MessageCircle size={14} /> 083 279 6962</a><a href={`https://wa.me/27828591438?text=${encodeURIComponent(`Hello Tlholoes Funeral Parlour, I would like to ask about the ${item.name} package.`)}`} target="_blank" rel="noreferrer"><MessageCircle size={14} /> 082 859 1438</a></div></article>)}</div>
+          <div className="package-grid">{packageDetails.map((item) => <article className="package-card" key={item.name}><div className="package-card-top"><span>{item.name}</span><strong>{item.price}</strong></div><h3>{item.coffin}</h3><p>{item.note}</p><div className="package-rule" /><small>{packageInclusions}</small><div className="package-card-actions"><a href={`https://wa.me/27832796962?text=${encodeURIComponent(`Hello Tlholoe's Funeral Parlour, I would like to ask about the ${item.name} package.`)}`} target="_blank" rel="noreferrer"><MessageCircle size={14} /> 083 279 6962</a><a href={`https://wa.me/27828591438?text=${encodeURIComponent(`Hello Tlholoe's Funeral Parlour, I would like to ask about the ${item.name} package.`)}`} target="_blank" rel="noreferrer"><MessageCircle size={14} /> 082 859 1438</a></div></article>)}</div>
           <div className="scheme-note"><strong>Scheme 1 + 9</strong><span>Plan A, members 14–65: Bronze R250 · Silver R350 · Platinum R430</span><span>Plan B, members 66–74: Bronze R300 · Silver R410 · Platinum R530</span><span>Pensioners, single only, age 74–80: Bronze R220 premium · 6-month waiting period</span></div>
-          <div className="anniversary-note"><span>68</span><div><strong>68th Anniversary</strong><p>Established in 1957 · serving families with dignity.</p></div></div>
-          <div className="package-whatsapp"><a className="whatsapp-button" href="https://wa.me/27832796962?text=Hello%20Tlholoes%20Funeral%20Parlour%2C%20I%20would%20like%20to%20ask%20about%20your%20packages." target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp 083 279 6962</a><a className="whatsapp-button" href="https://wa.me/27828591438?text=Hello%20Tlholoes%20Funeral%20Parlour%2C%20I%20would%20like%20to%20ask%20about%20your%20packages." target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp 082 859 1438</a></div>
+          <div className="anniversary-note"><span>69</span><div><strong>69th Anniversary</strong><p>Established in 1957 · serving families with dignity.</p></div></div>
+          <div className="package-whatsapp"><a className="whatsapp-button" href="https://wa.me/27832796962?text=Hello%20Tlholoe%27s%20Funeral%20Parlour%2C%20I%20would%20like%20to%20ask%20about%20your%20packages." target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp 083 279 6962</a><a className="whatsapp-button" href="https://wa.me/27828591438?text=Hello%20Tlholoe%27s%20Funeral%20Parlour%2C%20I%20would%20like%20to%20ask%20about%20your%20packages." target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp 082 859 1438</a></div>
         </section>
 
         <section className="hours-section section-pad" id="hours">
@@ -159,9 +166,9 @@ export default function Home() {
           <div className="hours-card">
             <div className="section-index">05 <span>Find us</span></div>
             <h2>Open for your<br /><i>next question.</i></h2>
-            <p>Our Kagiso 2 parlour is here for conversations, enquiries, guidance, and 24/7 emergency support.</p>
+            <p>Our parlour at {fullAddress} is here for conversations, enquiries, guidance, and 24/7 emergency support.</p>
             <div className="hours-list"><div className="hours-title"><Clock3 size={18} /> Office hours</div>{hours.map(([day, time]) => <div className="hours-row" key={day}><span>{day}</span><strong>{time}</strong></div>)}</div>
-            <a className="button primary full" href="https://www.google.com/maps/search/?api=1&query=8696+Otlega+Drive+Kagiso+2+South+Africa" target="_blank" rel="noreferrer"><MapPin size={17} /> Get directions</a><a className="emergency-link" href="tel:+27114101081"><Phone size={16} /> Emergency support · 24/7</a>
+            <a className="button primary full" href={mapsUrl} target="_blank" rel="noreferrer"><MapPin size={17} /> Get directions</a><a className="emergency-link" href="tel:+27114101081"><Phone size={16} /> Emergency support · 24/7</a>
           </div>
         </section>
 
@@ -170,7 +177,7 @@ export default function Home() {
           <div className="feedback-grid">
             <div>
               <h2 style={{ paddingBottom: "20px" }}>Help us serve<br /><i>families better.</i></h2>
-              <p style={{ paddingBottom: "22px" }}>Tell Tlholoes about your experience or share a suggestion. Your message will open an email addressed to the parlour team for review.</p>
+              <p style={{ paddingBottom: "22px" }}>Tell Tlholoe's about your experience or share a suggestion. Your message will open an email addressed to the parlour team for review.</p>
               <p className="review-note">Feedback is reviewed by the company before anything is considered for publication. No review is added to this website automatically.</p>
             </div>
             <form className="feedback-form" onSubmit={submitFeedback}>
@@ -181,8 +188,9 @@ export default function Home() {
               <label htmlFor="feedback-message">Your feedback</label>
               <textarea id="feedback-message" name="message" rows={5} placeholder="Share your experience or suggestion" required />
               <label className="permission-check"><input name="permission" type="checkbox" /> I am happy for the company to consider sharing this feedback publicly.</label>
-              <button className="button primary" type="submit"><Mail size={17} /> Send feedback to Tlholoes</button>
-              {feedbackSent && <p className="feedback-confirmation" role="status">Your email app should now be ready to send the feedback to Tlholoes.</p>}
+              <p className="privacy-hint">We use your details only to respond to your feedback. See our <a href="/privacy">privacy notice</a>.</p>
+              <button className="button primary" type="submit"><Mail size={17} /> Send feedback to Tlholoe's</button>
+              {feedbackSent && <p className="feedback-confirmation" role="status">Your email app should now be ready to send the feedback to Tlholoe's.</p>}
             </form>
           </div>
         </section>
@@ -190,7 +198,7 @@ export default function Home() {
 
         <section className="final-cta section-pad">
           <div className="final-cta-copy">
-            <p className="eyebrow"><span className="eyebrow-line" /> Tlholoes Funeral Parlour</p>
+            <p className="eyebrow"><span className="eyebrow-line" /> Tlholoe's Funeral Parlour</p>
             <h2>One clear call.<br /><i>Then the next step.</i></h2>
             <p>For enquiries, arrangements, or simply to know what to do next, we are here to listen.</p>
             <div className="hero-actions">
@@ -199,12 +207,12 @@ export default function Home() {
             </div>
           </div>
           <div className="final-cta-image">
-            <img src={pamphletCallImage} alt="A woman holding a Tlholoes Funeral Parlour pamphlet while making an enquiry call" />
+            <img src={pamphletCallImage} alt="A woman holding a Tlholoe's Funeral Parlour pamphlet while making an enquiry call" />
           </div>
         </section>
       </main>
 
-      <footer className="footer"><div className="footer-brand"><img src={symbolLogo} alt="" /><div><strong>Tlholoes Funeral Parlour</strong><span>8696 Otlega Drive, Kagiso 2, South Africa · Est. 1957</span></div></div><div className="footer-links"><a href="#top">Back to top</a><a href="https://www.facebook.com/p/Tlholoes-Funeral-Parlour-61556540136992/" target="_blank" rel="noreferrer">Facebook</a><span>© {new Date().getFullYear()} Tlholoes</span></div></footer>
+      <footer className="footer"><div className="footer-brand"><img src={symbolLogo} alt="" /><div><strong>{legalName}</strong><span>{fullAddress} · Est. 1957</span></div></div><div className="footer-links"><a href="#top">Back to top</a><a href="/privacy">Privacy notice</a><a href="https://www.facebook.com/p/Tlholoes-Funeral-Parlour-61556540136992/" target="_blank" rel="noreferrer">Facebook</a><span>© {new Date().getFullYear()} {legalName}</span></div></footer>
     </div>
   );
 }
