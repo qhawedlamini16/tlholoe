@@ -184,3 +184,18 @@ h2 { font-size:clamp(46px,5.2vw,75px); letter-spacing:-.045em; line-height:.9; }
 /* Feedback-to-contact separation: keep the form and closing CTA visually independent. */
 .feedback-cta-separator { background:#FFFFFF; height:56px; }
 @media (max-width:800px) { .feedback-cta-separator { height:36px; } }
+
+/* Service pages */
+a.service-item { color:inherit; text-decoration:none; }
+.service-page { padding-top:70px; }
+.service-page h1 { font-family:'Cormorant Garamond'; font-size:clamp(40px,6vw,72px); font-weight:500; line-height:1.02; margin:18px 0 40px; }
+.service-back { align-items:center; color:#68625D; display:inline-flex; font-size:13px; gap:6px; margin-bottom:28px; text-decoration:none; }
+.service-back:hover { color:var(--oxblood); }
+.service-page-grid { display:grid; gap:8%; grid-template-columns:1.4fr 1fr; }
+.service-page-body p { color:#4F4945; font-size:17px; line-height:1.75; margin:0 0 20px; max-width:620px; }
+.service-page-body .hero-actions { margin-top:32px; }
+.service-page-card { align-self:start; border:1px solid var(--border); padding:28px; }
+.service-page-card .hours-title { align-items:center; display:flex; font-weight:600; gap:8px; margin-bottom:14px; }
+.service-page-card .hours-row { border-top:1px solid var(--border); display:flex; font-size:14px; justify-content:space-between; padding:12px 0; }
+.service-page-address { align-items:center; color:var(--oxblood); display:flex; font-size:14px; gap:6px; margin-top:16px; text-decoration:none; }
+@media (max-width:800px) { .service-page-grid { grid-template-columns:1fr; gap:36px; } .service-nav { display:none; } .service-page { padding-top:45px; } }
